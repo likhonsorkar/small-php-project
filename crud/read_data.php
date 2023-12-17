@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
+    <title>User List Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -14,6 +14,26 @@
 <body>
 
     <div class="container">
+         
+         <?php
+            if(isset($_GET['message'])){
+              ?><div class="message"> <?php
+              if($_GET['type']== 'succes'){
+                ?>
+                <div class="alert alert-success mt-5" role="alert">
+                  <?php echo $_GET['message'];?>
+                </div>
+                <?php
+              }else if($_GET['type']== 'failed'){
+                ?>
+                <div class="alert alert-danger mt-5" role="alert">
+                  <?php echo $_GET['message'];?>
+                </div>
+                <?php
+              }
+              ?></div> <?php
+            }
+            ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="card mt-4">
@@ -34,7 +54,7 @@
                         </thead>
                         <tbody>
                           <?php
-                            $sql = "SELECT * FROM user_list";
+                            $sql = "SELECT * FROM user_list ORDER BY id DESC";
                             $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result) > 0){
                               while($row = mysqli_fetch_assoc($result)){

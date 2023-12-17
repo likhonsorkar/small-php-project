@@ -56,7 +56,7 @@
                     $sql = "INSERT INTO user_list (fname,lname,email,phone,address,profile_img,gender,birth_date) VALUES ('$fname', '$lname', '$email', '$phone','$address', '$target_file', '$gender', '$birthdate')";
                     $query = mysqli_query($conn,$sql);
                     if($query){
-                        header('location:read_data.php?newusercreatesuccess');
+                        header('location:read_data.php?message=New user create Successfull&type=succes');
                     }else{
                         $extramsg = 'Sorry User Create not succesfull';
                     }
@@ -75,7 +75,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
+    <title>User Create</title>
     <link rel="stylesheet" href="style.css">
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
