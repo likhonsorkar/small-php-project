@@ -75,7 +75,7 @@
         
             <form action="update_data.php?id=<?php echo $id?>" class="form-group" method="POST">
                 <div class="form-group border border-primary shadow-sm p-3 mb-5 bg-white rounded mt-5">
-                    <h3 class="text-center"> Create user data </h3>
+                    <h3 class="text-center"> Update user data </h3>
                     <span class="link-danger"><?php echo $extramsg;?><br></span>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
